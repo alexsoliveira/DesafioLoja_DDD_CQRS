@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+    desafio.loja.api:
+        image: desafio-loja-api:latest
+        container_name: desafio.loja.api
+        build:
+            context: ./back-end/src
+            dockerfile: ./Desafio.Loja.Api/Dockerfile
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_HTTP_PORTS=5000
+            - ASPNETCORE_HTTPS_PORTS=5001
+            - ASPNETCORE_URLS=http://*:5000
+        ports:
+            - "5000:5000"
+            - "5001:5001"
+        networks:
+            - desafio-loja-networks
+        
+    desafio.loja.client:
+        image: desafio-loja-client:latest
+        container_name: desafio.loja.client
+        build:
+            context: ./front-end
+            dockerfile: ./desafio.loja.client/Dockerfile              
+        ports:
+            - "4200:4200"
+        depends_on:
+            - desafio.loja.api
+        networks:
+            - desafio-loja-networks
+  
+networks:
+  desafio-loja-networks:    
+    driver: bridge

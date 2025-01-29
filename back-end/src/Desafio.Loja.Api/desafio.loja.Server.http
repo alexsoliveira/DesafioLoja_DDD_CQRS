@@ -1,0 +1,6 @@
+@desafio.loja.Server_HostAddress = http://localhost:5072
+
+GET {{desafio.loja.Server_HostAddress}}/
+Accept: application/json
+
+###
