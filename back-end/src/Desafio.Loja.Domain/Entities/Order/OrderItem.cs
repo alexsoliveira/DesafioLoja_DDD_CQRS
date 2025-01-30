@@ -1,6 +1,6 @@
 ﻿using Desafio.Loja.Domain.SeedWork;
 
-namespace Desafio.Loja.Domain.Entities
+namespace Desafio.Loja.Domain.Entities.Order
 {
     public class OrderItem : Entity
     {
@@ -10,7 +10,7 @@ namespace Desafio.Loja.Domain.Entities
         public int Quantity { get; private set; }
         public decimal UnitPrice { get; private set; }
         public decimal TotalPrice { get; private set; }
-        
+
         public Order Order { get; set; }
 
         public OrderItem(Guid productId, string productName, int quantity, decimal unitPrice)

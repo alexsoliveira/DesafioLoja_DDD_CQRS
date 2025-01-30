@@ -1,4 +1,4 @@
-﻿using Desafio.Loja.Domain.Entities;
+﻿using Desafio.Loja.Domain.Entities.Order;
 using Desafio.Loja.Domain.SeedWork;
 
 namespace Desafio.Loja.Domain.Repository

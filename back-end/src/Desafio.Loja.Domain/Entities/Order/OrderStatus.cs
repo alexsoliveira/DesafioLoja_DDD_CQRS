@@ -1,4 +1,4 @@
-﻿namespace Desafio.Loja.Domain.Entities
+﻿namespace Desafio.Loja.Domain.Entities.Order
 {
     public enum OrderStatus
     {

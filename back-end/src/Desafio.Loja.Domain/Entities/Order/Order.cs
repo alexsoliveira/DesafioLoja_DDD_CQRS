@@ -1,10 +1,11 @@
 ﻿using Desafio.Loja.Domain.Exceptions;
 using Desafio.Loja.Domain.SeedWork;
 
-namespace Desafio.Loja.Domain.Entities
+namespace Desafio.Loja.Domain.Entities.Order
 {
     public class Order : AggregateRoot
     {
+        public int Code { get; private set; }
         public Guid CustomerId { get; private set; }
         public DateTime OrderDate { get; private set; }
         public decimal TotalAmount { get; private set; }
@@ -27,7 +28,7 @@ namespace Desafio.Loja.Domain.Entities
 
         public void CalculateOrderValue()
         {
-            TotalAmount = OrderItems.Sum(p => p.CalculateValue());            
+            TotalAmount = OrderItems.Sum(p => p.CalculateValue());
         }
 
         public bool OrderItemExisting(OrderItem item)

@@ -31,5 +31,12 @@ namespace Desafio.Loja.Domain.Validation
                 throw new EntityValidationException(
                     $"{fieldName} should be less or equal {maxLength} characters long");
         }
+
+        public static void MinLength(decimal target, int minLength, string fieldName)
+        {
+            if (target < minLength)
+                throw new EntityValidationException(
+                    $"{fieldName} should be at leats {minLength}");
+        }
     }
 }
